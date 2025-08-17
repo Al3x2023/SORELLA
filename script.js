@@ -1,12 +1,41 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Inicializar el mapa
-    var map = L.map('map').setView([40.7128, -74.0060], 13); // Coordenadas de Nueva York como ejemplo
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>',
-        subdomains: ['a', 'b', 'c']
-    }).addTo(map);
+// --- Toggle del menú en móvil ---
+document.addEventListener("DOMContentLoaded", () => {
+  const nav = document.querySelector("header nav");
+  const toggleBtn = document.createElement("button");
+  toggleBtn.innerHTML = '<i class="fas fa-bars"></i>';
+  toggleBtn.classList.add("menu-toggle");
 
-    // Agregar un marcador en el mapa
-    var marker = L.marker([40.7128, -74.0060]).addTo(map);
-    marker.bindPopup("<b>Pizza Hut</b><br>Ubicación ejemplo").openPopup();
+  // Insertar botón de menú en header
+  document.querySelector("header").insertBefore(toggleBtn, nav);
+
+  toggleBtn.addEventListener("click", () => {
+    nav.classList.toggle("active");
+    toggleBtn.innerHTML = nav.classList.contains("active")
+      ? '<i class="fas fa-times"></i>'
+      : '<i class="fas fa-bars"></i>';
+  });
+
+  // --- Scroll suave a secciones ---
+  document.querySelectorAll("nav a").forEach(link => {
+    link.addEventListener("click", e => {
+      e.preventDefault();
+      const target = document.querySelector(link.getAttribute("href"));
+      if (target) {
+        window.scrollTo({
+          top: target.offsetTop - 70,
+          behavior: "smooth"
+        });
+        nav.classList.remove("active"); // cerrar menú en móvil
+        toggleBtn.innerHTML = '<i class="fas fa-bars"></i>';
+      }
+    });
+  });
+
+  // --- Botones de ordenar ---
+  document.querySelectorAll(".btn").forEach(btn => {
+    btn.addEventListener("click", e => {
+      e.preventDefault();
+      alert("✅ Gracias por tu interés. El sistema de pedidos estará disponible pronto.");
+    });
+  });
 });
