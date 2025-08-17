@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Pizzería</title>
+  <title>Pizzería Sorella</title>
 
   <!-- Fuentes e íconos -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,7 +32,7 @@
       <section id="home" class="hero">
         <div class="hero__text">
           <h1>Sorella <span>Pizza</span></h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <p>Delicias artesanales con ingredientes frescos y auténticos. ¡Servicio a domicilio sin costo!</p>
           <a href="#order" class="btn">Order Now</a>
         </div>
         <div class="hero__img">
@@ -49,27 +49,37 @@
         <div class="menu__panel">
           <h3>DISCOVER<br><span>OUR MENU</span></h3>
           <ul>
-            <li>Margherita <span>$12</span></li>
             <li>Pepperoni <span>$15</span></li>
-            <li>Vegetarian <span>$14</span></li>
+            <li>Hawaiian <span>$16</span></li>
+            <li>Pepperoni Especial <span>$17</span></li>
+            <li>Carnes Frías <span>$18</span></li>
+            <li>Toluquera <span>$18</span></li>
+            <li>Ranchera <span>$19</span></li>
+            <li>Volcán <span>$20</span></li>
           </ul>
         </div>
 
         <div class="menu__pizzas">
-          <div class="pizza">
-            <img src="./imagenes/pexels-pedrofurtadoo-33457565.jpg" alt="Margherita" />
-            <p>Margherita</p>
-            <a href="#order" class="btn-order" data-pizza="Margherita">Order</a>
-          </div>
+          <!-- Pizza 1: Pepperoni -->
           <div class="pizza">
             <img src="./imagenes/pexels-brettjordan-842519.jpg" alt="Pepperoni" />
             <p>Pepperoni</p>
+            <p class="ingredients">Salsa especial, pepperoni y queso.</p>
             <a href="#order" class="btn-order" data-pizza="Pepperoni">Order</a>
           </div>
+          <!-- Pizza 2: Hawaiian -->
           <div class="pizza">
-            <img src="./imagenes/pexels-enginakyurt-2619970.jpg" alt="Vegetarian" />
-            <p>Vegetarian</p>
-            <a href="#order" class="btn-order" data-pizza="Vegetarian">Order</a>
+            <img src="./imagenes/hawaiian-pizza.jpg" alt="Hawaiian" />
+            <p>Hawaiian</p>
+            <p class="ingredients">Salsa especial, queso, jamón, piña.</p>
+            <a href="#order" class="btn-order" data-pizza="Hawaiian">Order</a>
+          </div>
+          <!-- Pizza 3: Toluquera -->
+          <div class="pizza">
+            <img src="./imagenes/toluquera-pizza.jpg" alt="Toluquera" />
+            <p>Toluquera</p>
+            <p class="ingredients">Chorizo, cebolla, chiles, aguacate.</p>
+            <a href="#order" class="btn-order" data-pizza="Toluquera">Order</a>
           </div>
         </div>
       </section>
@@ -77,7 +87,7 @@
       <!-- ABOUT -->
       <section id="about" class="about">
         <h2>About Us</h2>
-        <p>Crafted with passion, baked to perfection. Fresh ingredients and an authentic Italian touch.</p>
+        <p>Desde 2025, horneamos pizzas con recetas tradicionales y un toque innovador. ¡Servicio a domicilio en Av. Tecno Álvaro O Con!</p>
       </section>
 
       <!-- ORDER -->
@@ -94,7 +104,7 @@
           </div>
           <div class="field">
             <label>Phone</label>
-            <input type="tel" placeholder="Your phone" required />
+            <input type="tel" placeholder="9722419216" required />
           </div>
           <div class="field">
             <label>Address</label>
@@ -102,10 +112,14 @@
           </div>
           <button class="btn" id="sendOrder">Send Order</button>
         </form>
+        <div class="contact-info">
+          <p><i class="fas fa-phone"></i> 97224192162 / 97227618252</p>
+          <p><i class="fas fa-map-marker-alt"></i> Av. Tecno Álvaro O Con</p>
+        </div>
       </section>
 
       <footer class="footer">
-        <p>© 2025 Pizzeria. All rights reserved.</p>
+        <p>© 2025 Pizzeria Sorella. Todos los derechos reservados.</p>
       </footer>
     </div>
   </div>

@@ -34,7 +34,15 @@ body{
   display:flex; align-items:center; justify-content: space-between;
   padding: 18px 0;
 }
-.logo{ font-weight: 700; letter-spacing: .08em; }
+.logo {
+  font-weight: 700;
+  letter-spacing: .08em;
+  font-size: 2rem;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #d62828, #f77f00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 .nav{ display:flex; gap:26px; align-items:center; }
 .nav a{
   text-decoration:none; color:#f1f1f1; font-weight: 400;
