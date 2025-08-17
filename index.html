@@ -1,66 +1,115 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sorella - Pizzería</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sorella Pizzería</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pizzería</title>
+
+  <!-- Fuentes e íconos -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Encabezado -->
-  <header>
-    <div class="logo">🍕 Sorella</div>
-    <nav>
-      <a href="#inicio">Inicio</a>
-      <a href="#menu">Menú</a>
-      <a href="#promociones">Promociones</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
-  </header>
+  <!-- Franjas rojas laterales -->
+  <div class="page-bg">
+    <!-- Lienzo negro centrado -->
+    <div class="page">
+      <header class="header">
+        <div class="logo">Sorella</div>
+        <button class="menu-toggle" aria-label="Abrir menú"><i class="fas fa-bars"></i></button>
+        <nav class="nav">
+          <a href="#home">Home</a>
+          <a href="#menu">Menu</a>
+          <a href="#about">About</a>
+          <a href="#order" class="btn btn--small">Order Now</a>
+        </nav>
+      </header>
 
-  <!-- Hero -->
-  <section class="hero" id="inicio">
-    <h1>Las mejores pizzas de la ciudad</h1>
-    <p>Ingredientes frescos, sabor auténtico, tradición italiana.</p>
-    <a href="#" class="btn">Haz tu pedido</a>
-  </section>
+      <!-- HERO -->
+      <section id="home" class="hero">
+        <div class="hero__text">
+          <h1>Sorella <span>Pizza</span></h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <a href="#order" class="btn">Order Now</a>
+        </div>
+        <div class="hero__img">
+          <!-- Imagen redonda estilo “spotlight” -->
+          <img
+            src="./imagenes/pexels-brettjordan-825661.jpg"
+            alt="Pizza grande"
+          />
+        </div>
+      </section>
 
-  <!-- Menú -->
-  <section class="menu" id="menu">
-    <h2>Menú Destacado</h2>
-    <div class="cards">
-      <div class="card">
-        <img src="pizza1.jpg" alt="Pizza">
-        <h3>Pizza Margherita</h3>
-        <p>$120 MXN</p>
-        <a href="#" class="btn">Ordenar</a>
-      </div>
-      <div class="card">
-        <img src="pizza2.jpg" alt="Pizza">
-        <h3>Pizza Pepperoni</h3>
-        <p>$150 MXN</p>
-        <a href="#" class="btn">Ordenar</a>
-      </div>
+      <!-- MENU -->
+      <section id="menu" class="menu">
+        <div class="menu__panel">
+          <h3>DISCOVER<br><span>OUR MENU</span></h3>
+          <ul>
+            <li>Margherita <span>$12</span></li>
+            <li>Pepperoni <span>$15</span></li>
+            <li>Vegetarian <span>$14</span></li>
+          </ul>
+        </div>
+
+        <div class="menu__pizzas">
+          <div class="pizza">
+            <img src="./imagenes/pexels-pedrofurtadoo-33457565.jpg" alt="Margherita" />
+            <p>Margherita</p>
+            <a href="#order" class="btn-order" data-pizza="Margherita">Order</a>
+          </div>
+          <div class="pizza">
+            <img src="./imagenes/pexels-brettjordan-842519.jpg" alt="Pepperoni" />
+            <p>Pepperoni</p>
+            <a href="#order" class="btn-order" data-pizza="Pepperoni">Order</a>
+          </div>
+          <div class="pizza">
+            <img src="./imagenes/pexels-enginakyurt-2619970.jpg" alt="Vegetarian" />
+            <p>Vegetarian</p>
+            <a href="#order" class="btn-order" data-pizza="Vegetarian">Order</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about" class="about">
+        <h2>About Us</h2>
+        <p>Crafted with passion, baked to perfection. Fresh ingredients and an authentic Italian touch.</p>
+      </section>
+
+      <!-- ORDER -->
+      <section id="order" class="order">
+        <h2>Place your order</h2>
+        <form class="order__form" onsubmit="return false;">
+          <div class="field">
+            <label>Product</label>
+            <input id="itemInput" type="text" value="Pepperoni" readonly />
+          </div>
+          <div class="field">
+            <label>Name</label>
+            <input type="text" placeholder="Your name" required />
+          </div>
+          <div class="field">
+            <label>Phone</label>
+            <input type="tel" placeholder="Your phone" required />
+          </div>
+          <div class="field">
+            <label>Address</label>
+            <textarea rows="3" placeholder="Street, number, references" required></textarea>
+          </div>
+          <button class="btn" id="sendOrder">Send Order</button>
+        </form>
+      </section>
+
+      <footer class="footer">
+        <p>© 2025 Pizzeria. All rights reserved.</p>
+      </footer>
     </div>
-  </section>
-<!-- Promociones -->
-<section id="promociones" class="promos">
-  <h2>Promociones</h2>
-  <p>¡Próximamente descuentos irresistibles!</p>
-</section>
-  <!-- Footer -->
- <footer id="contacto">
-  <p>© 2025 Sorella Pizzería - Todos los derechos reservados</p>
-</footer>
+  </div>
+
+  <script src="script.js"></script>
 </body>
-<script src="script.js"></script>
 </html>
